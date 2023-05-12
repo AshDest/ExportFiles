@@ -20,3 +20,4 @@ Route::get('/', function () {
     return view('home');
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/posts', [App\Http\Controllers\HomeController::class, 'posts'])->name('posts');

@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <a href="{{ route('posts') }}" class="btn btn-primary">Add Post</a>
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
@@ -13,7 +14,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    @livewire('posts')
+                    @livewire('users')
                 </div>
             </div>
         </div>

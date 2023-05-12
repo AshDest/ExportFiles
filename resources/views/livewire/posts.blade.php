@@ -1,26 +1,9 @@
 <div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Posts</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($users as $user)
-            <tr>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
-                <td>
-                    <ul>
-                        @foreach($user->posts as $post)
-                        <li>{{ $post->title }}</li>
-                        @endforeach
-                    </ul>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+    <form wire:submit.prevent="save">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" wire:model='title' id="title">
+        <label for="content">Body</label>
+        <textarea name="content" id="content" cols="30" rows="10" class="form-control" wire:model='content'></textarea>
+        <button class="btn btn-primary">Enregistrer</button>
+    </form>
 </div>

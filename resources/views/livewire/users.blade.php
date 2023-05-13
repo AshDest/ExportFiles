@@ -13,11 +13,12 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>
+                    @foreach($user->posts as $post)
                     <ul>
-                        @foreach($user->posts as $post)
                         <li>{{ $post->title }}</li>
-                        @endforeach
+                        <li>{{$post->content}}</li>
                     </ul>
+                    @endforeach
                 </td>
             </tr>
             @endforeach
